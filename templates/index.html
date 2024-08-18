@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Traductor de Código Morse</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class = "container">
+        <h1>Traductor de código Morse</h1>
+        <form id = "translate-form" action = "/translate" method = "POST">
+            <textarea id = "input_text" name = "input_text" placeholder = "Introduce tu texto...">{{ request.form.get('input_text', '') }}</textarea>
+            <div class = "buttons">
+                <button type = "submit" name = "direction" value = "to-morse">Traducir a Morse</button>
+                <button type = "submit" name = "direction" value = "to-text">Traducir a Texto</button>
+            </div>
+        </form>
+        <div id="output-text">{{ output_text }}</div>
+    </div>
+    <footer>
+        <p>Desarrollado por Rodrigo Alegre</p>
+    </footer>
+    <script src ="/static/js/script.js"></script>
+</body>
+</html>
